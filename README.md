@@ -1,16 +1,16 @@
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# Tickless Example Using AVR DA Microcontroller and FreeRTOS
+# Tickless Example Using AVR® DA Microcontroller and FreeRTOS™
 
-The tickless project is a basic example that shows how to use low-power in a FreeRTOS project (tickless mode) using the MCC Melody library. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as a starting point for an RTOS application.
+The tickless project is a basic example that shows how to use a low-power functionality in a FreeRTOS project (Tickless mode) using the using the MPLAB® Code Configurator library.. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as a starting point for an RTOS application.
 
 The project is contained in a single source file (`freertos_interface.c`) as following:
 
 1. The main application loop creates a semaphore, a queue and two tasks, then starts the RTOS scheduler.
-2. The Queue Send Task is implemented by **prvQueueSendTask()**. It enters a blocked state in which it waits for the semaphore or for a set time to elapse (500ms in this demo case) in order to send a fixed value (100 in this demo case) to the queue.
-3. The Queue Receive Task is implemented by **prvQueueReceiveTask()**. It waits for something to be received and if it matches an expected value, it toggles the LED for a set amount of time (30ms in this demo case).
+2. The Queue Send Task is implemented by **prvQueueSendTask()**. It enters a blocked state in which it waits for the semaphore or for a set time to elapse (500 ms in this demo case) in order to send a fixed value (100 in this demo case) to the queue.
+3. The Queue Receive Task is implemented by **prvQueueReceiveTask()**. It waits for a value to be received and if it matches the expected one, it toggles the LED for a set amount of time (30 ms in this demo case).
 
-In low power tickless mode the RTOS tick is stopped, meaning that an intended delay for a task could not be attempt using the **vTaskDelay()** RTOS function that is based on the tick interrupt. For this example, the solution to obtain the delay needed for the Send Task is to use a semaphore that has a maximum block time of 500 ticks. The semaphore is never released, so the task will be blocked trying to acquire the semaphore for the maximum time of 500 ticks. The tick rate for this demo is set to 1 ms, resulting in 500 ms blocking time.
+In Low Power Tickless Mode the RTOS tick is stopped, meaning that an intended delay for a task could not be attempted using the **vTaskDelay()** RTOS function that is based on the tick interrupt. For this example, the solution to obtain the delay needed for the Send Task is to use a semaphore that has a maximum block time of 500 ticks. The semaphore is never released, so the task will be blocked while trying to acquire the semaphore for the maximum time of 500 ticks. The tick rate for this demo is set to 1 ms, resulting in a 500 ms blocking time.
 
 ## Related Documentation
 
@@ -19,17 +19,17 @@ More details and code examples on the AVR128DA48 can be found at the following l
 - [AVR128DA48 Product Page](https://www.microchip.com/wwwproducts/en/AVR128DA48?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08)
 - [AVR128DA48 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR128DA48)
 - [FreeRTOS Demo for the Microchip AVR Dx Port](https://www.freertos.org/microchip-avr-dx-demo.html)
-- [FreeRTOS™ pages](https://www.freertos.org/index.html)
+- [FreeRTOS pages](https://www.freertos.org/index.html)
 
 ## Software Used
-- [MPLAB® X IDE v6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08) 
-- [MPLAB® XC8 v2.46 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08)
-- [AVR-Dx Series Device Pack v2.6.303 or newer](https://packs.download.microchip.com/)
-- [MPLAB® Code Configurator (MCC) v5.7.1 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08)
+- [MPLAB X IDE v6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08) 
+- [MPLAB XC8 v2.46 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08)
+- [AVR-Dx Series Device Support v2.6.303 or newer](https://packs.download.microchip.com/)
+- [MPLAB Code Configurator (MCC) v5.7.1 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08)
 
 ## MCC Configuration
 
-- AVR Devices package 4.11.0 or newer
+- AVR Device package v4.11.0 or newer
 - FreeRTOS Library v2.0.1
 
 ## Hardware Used
@@ -40,14 +40,14 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 ## Operation
 
-To program the Curiosity Nano board with this MPLAB® X project, follow the steps provided in the [How to Program the Curiosity Nano Board](#how-to-program-the-curiosity-nano-board) section.<br>
+To program the Curiosity Nano board with this MPLAB X project, follow the steps provided in the [How to Program the Curiosity Nano Board](#how-to-program-the-curiosity-nano-board) section.<br>
 
 
 ## Setup
 
 The following configurations must be made for this project:
 
-1. Add FreeRTOS library to the project.
+1. Add the FreeRTOS library to the project.
 <br><img src="images/freeRTOS_library.png" width="800">
 
 2. Configure the FreeRTOS application: <br>
@@ -73,7 +73,7 @@ The following configurations must be made for this project:
 
 ## Demo
 
-The application queues blocks of 500 ms during which the LED stays on for 30ms.
+The application queues blocks of 500 ms during which the LED stays on for 30 ms.
 <br><img src="images/demo.gif" width="600">
 
 The result can also be seen by watching the signal with the logic analyzer:
@@ -88,24 +88,24 @@ The advantage of using the Low Power Tickless Mode is the low current consumptio
 
 ## Summary
 
-This repository provides an MPLAB® X project that shows how to use the FreeRTOS library to create a basic demo application that toggles a LED using the tickless mode on AVR128DA48 microcontroller.
+This repository provides an MPLAB X project that shows how to use the FreeRTOS library to create a basic demo application that toggles an LED using the Tickless mode on AVR128DA48 microcontroller.
 
 ## How to Program the Curiosity Nano Board
 
-This chapter shows how to use the MPLAB® X IDE to program an AVR® device with an Example_Project.X. This can be applied to any other projects.
+This chapter shows how to use the MPLAB X IDE to program an AVR device with an `Example_Project.X`. This can be applied to any other projects.
 
 - Connect the board to the PC
 
-- Open the Example_Project.X project in MPLAB® X IDE
+- Open the `Example_Project.X` project in MPLAB X IDE
 
-- Set the Example_Project.X project as main project
+- Set the `Example_Project.X` project as main project
 
   - Right click the project in the **Projects** tab and click **Set as Main Project**
     <br><img src="images/Program_Set_as_Main_Project.png" width="600">
 
-- Clean and build the Example_Project.X project
+- Clean and build the `Example_Project.X` project
 
-  - Right click the **Example_Project.X** project and select **Clean and Build**
+  - Right click the `Example_Project.X` project and select **Clean and Build**
     <br><img src="images/Program_Clean_and_Build.png" width="600">
 
 - Select **AVRxxxxx Curiosity Nano** in the Connected Hardware Tool section of the project settings:
@@ -123,7 +123,7 @@ This chapter shows how to use the MPLAB® X IDE to program an AVR® device with 
 
 ## Contents
 
-- [Back to Top](#tickless-example-using-avr-da-microcontroller-and-freertos)
+- [Back to Top](#tickless-example-using-avr®-da-microcontroller-and-freertos™)
 - [Back to Related Documentation](#related-documentation)
 - [Back to Software Used](#software-used)
 - [Back to MCC Configuration](#mcc-configuration)
