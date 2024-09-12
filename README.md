@@ -2,7 +2,7 @@
 
 # Tickless Example Using AVR® DA Microcontroller and FreeRTOS™
 
-The tickless project is a basic example that shows how to use a low-power functionality in a FreeRTOS project (Tickless mode) using the using the MPLAB® Code Configurator library.. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as a starting point for an RTOS application.
+The tickless project is a basic example that shows how to use a low-power functionality in a FreeRTOS project (Tickless mode) using the using the MPLAB® Code Configurator library. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as a starting point for an RTOS application.
 
 The project is contained in a single source file (`freertos_interface.c`) as following:
 
@@ -69,7 +69,7 @@ The following configurations must be made for this project:
 
 | Pin |     Configuration     |
 | :-: | :-------------------: |
-| PC6 | Digital Output (LED0) |
+| PC6 | Digital output (LED0) |
 
 ## Demo
 
@@ -79,7 +79,7 @@ The application queues blocks of 500 ms during which the LED stays on for 30 ms.
 The result can also be seen by watching the signal with the logic analyzer:
 <br><img src="images/demo-img.png" width="600">
 
-The advantage of using the Low Power Tickless Mode is the low current consumption in idle state. For this example the current is measured using a [Power Debugger](https://www.microchip.com/en-us/development-tool/ATPOWERDEBUGGER?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08) and is visualized in [MPLAB Data Visualizer](https://www.microchip.com/en-us/tools-resources/debug/mplab-data-visualizer?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08). The results are shown in the below images:
+The advantage of using the Low Power Tickless Mode is the low current consumption in Idle state. For this example the current is measured using a [Power Debugger](https://www.microchip.com/en-us/development-tool/ATPOWERDEBUGGER?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08) and is visualized in [MPLAB Data Visualizer](https://www.microchip.com/en-us/tools-resources/debug/mplab-data-visualizer?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-tickless-mplab-mcc-github&utm_bu=MCU08). The results are shown in the images below:
 - Low Power Tickless Mode enabled
 <br><img src="images/power-with-tickless.png" width="600">
 
